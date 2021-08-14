@@ -98,7 +98,7 @@ export default function App() {
           Get Data
         </button>
       </div>
-      <div style={{ marginBottom: "10px" }}>Data: </div>
+      <div style={{ marginBottom: "10px" }}>POST: </div>
       <div>ID : {state.data?.id}</div>
       <div>User ID : {state.data?.userId}</div>
       <div>Title : {state.data?.title}</div>
