@@ -34,7 +34,7 @@ const decrementCounter = (state, action) => ({
   count: state.count - 1
 });
 const resetCounter = (state, action) => ({
-  ...state,
+  data: {},
   count: action.payload.count
 });
 
