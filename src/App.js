@@ -9,7 +9,7 @@ const ACTIONS = {
   FETCHDATA: "FETCH_DATA"
 };
 
-// custom reducer hook with async dispatch
+// custom reducer hook to do async dispatch
 const useReducerWithThunk = (reducer, initialState) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -66,7 +66,6 @@ const fetchData = () => async (dispatch) => {
   const post = await axiosInstance.get(
     "https://jsonplaceholder.typicode.com/posts/1"
   );
-  console.log(post);
   dispatch({ type: ACTIONS.FETCHDATA, payload: post.data });
 };
 
@@ -85,7 +84,7 @@ export default function App() {
   return (
     <>
       Count: {state.count}
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", marginBottom: "20px" }}>
         <button style={{ marginRight: "10px" }} onClick={onIncrementClick}>
           +
         </button>
@@ -99,7 +98,11 @@ export default function App() {
           Get Data
         </button>
       </div>
-      <div>Data: {JSON.stringify(state.data)}</div>
+      <div style={{ marginBottom: "10px" }}>Data: </div>
+      <div>ID : {state.data?.id}</div>
+      <div>User ID : {state.data?.userId}</div>
+      <div>Title : {state.data?.title}</div>
+      <div>Body : {state.data?.body}</div>
     </>
   );
 }
