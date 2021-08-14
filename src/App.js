@@ -7,11 +7,11 @@ const ACTIONS = {
   RESET: "RESET"
 };
 
+// State file
 const incrementCounter = (state, action) => ({ count: state.count + 1 });
 const decrementCounter = (state, action) => ({ count: state.count - 1 });
 const resetCounter = (state, action) => ({ count: action.payload.count });
 
-// State file
 const initialState = {
   count: 0
 };
@@ -40,10 +40,16 @@ export default function App() {
   return (
     <>
       Count: {state.count}
-      <div style={{ display: "flex", marginRight: "20px" }}>
-        <button onClick={onIncrementClick}>+</button>
-        <button onClick={onDecrementClick}>-</button>
-        <button onClick={onResetCounter}>Reset</button>
+      <div style={{ display: "flex" }}>
+        <button style={{ marginRight: "10px" }} onClick={onIncrementClick}>
+          +
+        </button>
+        <button style={{ marginRight: "10px" }} onClick={onDecrementClick}>
+          -
+        </button>
+        <button style={{ marginRight: "10px" }} onClick={onResetCounter}>
+          Reset
+        </button>
       </div>
     </>
   );
